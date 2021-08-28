@@ -6,7 +6,7 @@
 /*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 15:27:09 by jzhou             #+#    #+#             */
-/*   Updated: 2021/08/22 09:22:09 by jzhou            ###   ########.fr       */
+/*   Updated: 2021/08/27 17:51:47 by jzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	ft_putstr(char *c)
 	index = 0;
 	if (c == NULL)
 	{
-		write(1, &"(null)", 6);
+		write(1, "(null)", 6);
 		index = index + 6;
+		return (index);
 	}
 	while (c[index] != '\0')
 	{
@@ -43,6 +44,8 @@ int	ft_putptr(void *ptr)
 	unsigned long	res;
 	int				index;
 
+	if (ptr == NULL)
+		return (write(1, "0x0", 3));
 	addr = (unsigned long) ptr;
 	index = 0;
 	write(1, "0x", 2);

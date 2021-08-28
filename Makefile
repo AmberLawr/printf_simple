@@ -29,6 +29,7 @@ all: sub_libft $(NAME)
 $(NAME):
 	$(CC) $(FLAGS) -c $(SRC)
 	ar -rcs $(NAME) *.o $(LIBFT_PATH)*.o
+
 sub_libft:
 	$(MAKE) libft.a -C $(LIBFT_PATH)
 
